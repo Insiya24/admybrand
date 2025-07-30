@@ -1,6 +1,7 @@
 import { FeatureCard } from "@/components/ui/feature-card";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { 
+import { useScrollReveal } from "@/hooks/use-gsap";
+import {
   Brain, 
   Palette, 
   BarChart3, 
@@ -55,28 +56,29 @@ const features = [
 ];
 
 export function Features() {
+  const titleRef = useScrollReveal(0);
+  const gridRef = useScrollReveal(0.2);
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Powerful Features for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-primary">
-                Modern Marketing
-              </span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Everything you need to build, launch, and scale your brand with AI-powered tools 
-              that work smarter, not harder.
-            </p>
-          </div>
-        </ScrollReveal>
+        <div className="text-center mb-16" ref={titleRef as React.RefObject<HTMLDivElement>}>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Powerful Features for{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-primary">
+              Modern Marketing
+            </span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Everything you need to build, launch, and scale your brand with AI-powered tools 
+            that work smarter, not harder.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" ref={gridRef as React.RefObject<HTMLDivElement>}>
           {features.map((feature, index) => (
             <ScrollReveal 
               key={feature.title} 

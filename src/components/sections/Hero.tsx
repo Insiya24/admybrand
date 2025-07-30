@@ -2,10 +2,14 @@ import { GradientButton } from "@/components/ui/gradient-button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { DemoVideo } from "@/components/ui/demo-video";
+import { useParallax, useFloatingAnimation } from "@/hooks/use-gsap";
 import { ArrowRight, Play, Zap, Users, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/hero-ai-suite.jpg";
 
 export function Hero() {
+  const parallaxRef = useParallax();
+  const floatingRef = useFloatingAnimation();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -103,13 +107,15 @@ export function Hero() {
           {/* Right Content - Hero Image & Demo */}
           <div className="space-y-6">
             <ScrollReveal delay={400} direction="right">
-              <div className="relative">
+              <div className="relative" ref={parallaxRef as React.RefObject<HTMLDivElement>}>
                 <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-3xl opacity-20 animate-pulse-glow"></div>
-                <img
-                  src={heroImage}
-                  alt="ADmyBRAND AI Suite Dashboard"
-                  className="relative rounded-2xl shadow-2xl w-full h-auto animate-float"
-                />
+                <div ref={floatingRef as React.RefObject<HTMLDivElement>}>
+                  <img
+                    src={heroImage}
+                    alt="ADmyBRAND AI Suite Dashboard"
+                    className="relative rounded-2xl shadow-2xl w-full h-auto"
+                  />
+                </div>
               </div>
             </ScrollReveal>
             

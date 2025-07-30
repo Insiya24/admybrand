@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { GradientButton } from "./gradient-button";
+import { ThemeToggle } from "./theme-toggle";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
@@ -55,6 +56,7 @@ export function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <GradientButton variant="ghost" size="sm">
               Sign In
             </GradientButton>
@@ -91,6 +93,9 @@ export function Navigation() {
                 </a>
               ))}
               <div className="pt-4 border-t border-white/10 space-y-2">
+                <div className="flex justify-center mb-2">
+                  <ThemeToggle />
+                </div>
                 <GradientButton variant="ghost" size="sm" className="w-full">
                   Sign In
                 </GradientButton>
