@@ -3,6 +3,7 @@
 ## Project info
 
 **URL**: https://lovable.dev/projects/63a8edaf-3858-4ee0-91c6-7f7b741f839a
+**Demo link**: https://admybrand.lovable.app
 
 ## How can I edit this code?
 
@@ -60,14 +61,38 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/63a8edaf-3858-4ee0-91c6-7f7b741f839a) and click on Share -> Publish.
+🧠 AI Usage Report
+AI Tools Used
+**Primary tools**: ChatGPT, Gemini, Lovable AI
 
-## Can I connect a custom domain to my Lovable project?
+**Key use cases**:
 
-Yes, you can!
+- Prompt refinement and ideation
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Component code generation (Hero, FAQ, etc.)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Tailwind utility suggestions
+
+- UI/UX enhancement guidance
+
+- Cross-checking best practices
+
+**Sample Prompts**
+"Create a responsive glassmorphic Hero section in Tailwind with CTA and scroll animation."
+
+"Suggest 6 compelling SaaS features with icons and titles."
+
+"How to build an interactive pricing calculator in React/Next.js?"
+
+**AI vs Manual Work Split**
+AI-generated (~60–70%)
+Scaffolded layout, reusable components, styling, and logic hints.
+
+Manual coding (~30–40%)
+Custom pricing calculator, responsiveness, color palette, and interactivity.
+
+Customization:
+Modified all AI outputs to suit project needs, visual polish, and ensure human-coded quality.
+
+
